@@ -3,12 +3,11 @@ import os
 
 client = OpenAI(
     # 如果没有配置环境变量，请用阿里云百炼API Key替换：api_key="sk-xxx"
-    # api_key=os.getenv("DASHSCOPE_API_KEY"),
-    api_key="abcd",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 
-messages = [{"role": "user", "content": "你是谁"}]
+messages = [{"role": "user", "content": "不配置os.getenv('DASHSCOPE_API_KEY')也可以"}]
 completion = client.chat.completions.create(
     model="qvq-max-2025-03-25",  # 您可以按需更换为其它深度思考模型
     messages=messages,
