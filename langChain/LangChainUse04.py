@@ -17,6 +17,14 @@ res = model.invoke(prompt_text)
 """
 
 # 方式二: chain执行链条
+"""
 chain = prompt_template | model
 res = chain.invoke({"name":"prompt","age":"5"})
 print(res)
+"""
+
+# format和invoke的区别
+prompt_format = prompt_template.format(name="prompt",age="5")
+print(prompt_format,type(prompt_format))
+prompt_invoke = prompt_template.invoke({"name":"prompt","age":"5"})
+print(prompt_invoke,type(prompt_invoke))

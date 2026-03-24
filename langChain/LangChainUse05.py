@@ -1,6 +1,12 @@
 """
 langchain的FewShot提示词模板
 zero-shot:可以基于fewShotPromptTemplate实现
+扩展：
+PromptTemplate -> StringPromptTemplate -> BasePromptTemplate -> RunnableSerializable -> Runnable
+FewShotPromptTemplate -> StringPromptTemplate -> BasePromptTemplate  -> RunnableSerializable -> Runnable
+ChatPromptTemplate -> BaseChatPromptTemplate -> BasePromptTemplate  -> RunnableSerializable -> Runnable
+Tongyi -> BaseLLM -> BaseLanguageModel -> RunnableSerializable -> Runnable
+ChatTongyi -> BaseChatModel -> BaseLanguageModel -> RunnableSerializable -> Runnable
 """
 from langchain_core.prompts import PromptTemplate,FewShotPromptTemplate
 from langchain_community.llms.tongyi import Tongyi
@@ -20,6 +26,7 @@ few_shot_template = FewShotPromptTemplate(
     input_variables=['input_word']
 )
 
+# invoke得到PromptValue类对象；format得到字符串
 prompt_text = few_shot_template.invoke({"input_word":"左"})
 
 model = Tongyi(model="qwen-max")
