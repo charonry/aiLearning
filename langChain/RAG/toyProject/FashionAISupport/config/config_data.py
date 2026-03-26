@@ -1,0 +1,1 @@
+md5_path = "./resource/txt/"
