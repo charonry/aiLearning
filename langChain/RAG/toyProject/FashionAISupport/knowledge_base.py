@@ -44,7 +44,7 @@ class KnowledgeBase:
         # 向量存储的实例
         self.chroma = Chroma(
             collection_name=config_data.collection_name,
-            embedding_function=DashScopeEmbeddings(model="text-embedding-v4"),
+            embedding_function=DashScopeEmbeddings(model=config_data.embedding_model_name),
             persist_directory=config_data.persist_directory,
         )
         # 文本分割器对象
