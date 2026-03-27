@@ -4,7 +4,7 @@
 """
 import time
 import streamlit as st
-from win32verstamp import file_type
+
 
 st.title("知识库更新服务")
 
