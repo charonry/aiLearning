@@ -18,3 +18,11 @@ max_split_char_number = 1000     # 文本分割的阈值
 
 # 向量检索返回匹配的文档数量
 similarity_threshold = 1
+
+# 会话路径
+storage_path = "./resource/history/fas"
+session_config_id = {
+        "configurable":{
+            "session_id":"user_001"
+        }
+    }
