@@ -17,6 +17,7 @@ def get_interferon(name: str) -> str:
 
 agent = create_agent(
     model=ChatTongyi(model="qwen3-max"),
+    # ReAct(Reasoning+Action)推理+行动：大模型智能体的核心思考与行动框架。必须按「思考→行动→观察→再思考」的流程解决问题，
     # 大模型会根据用户问题和工具的 description 智能选择「最匹配」的工具，而非随机 / 全部调用。
     tools=[get_price,get_info,get_interferon],
     system_prompt="你是一个智能助手，可以回答股票相关问题，记住请告知我思考过程，让我知道你为什么调用某个工具"
